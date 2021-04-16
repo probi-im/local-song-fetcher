@@ -12,8 +12,8 @@
     "postversion": "git push && git push --tags",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
-    "preversion": "npm run lint",
-    "version": "npm run format && git add -A src",
+    "preversion": "npm test",
+    "version": "npm run lint-fix && npm run format && git add -A src",
     "test": "jest"
   },
   "repository": {

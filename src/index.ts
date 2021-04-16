@@ -1,1 +1,3 @@
-export const Greeter = (name: string): string => `Hello ${name}`;
+import SongFetcher from './SongFetcher';
+
+export default new SongFetcher();
