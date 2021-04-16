@@ -1,4 +1,4 @@
-import TrackMetadata from "./TrackMetadata";
+import TrackMetadata from './TrackMetadata';
 
 export default class Track {
   id: string;
