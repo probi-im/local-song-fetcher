@@ -4,7 +4,7 @@ import { extname, join } from 'path';
 import Track from './Track';
 import TrackMetadata from './TrackMetadata';
 
-class SongFetcher {
+export default class SongFetcher {
   private recursive = false;
 
   private async isDirectory(path: string) {
@@ -77,5 +77,3 @@ class SongFetcher {
     }
   }
 }
-
-export default SongFetcher;

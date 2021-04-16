@@ -1,3 +1,5 @@
 import SongFetcher from './SongFetcher';
 
-export default new SongFetcher();
+const songFetcher = new SongFetcher();
+
+export default songFetcher;
