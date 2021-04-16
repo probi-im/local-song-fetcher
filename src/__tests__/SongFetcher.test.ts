@@ -4,10 +4,10 @@ import SongFetcher from '../SongFetcher';
 import Track from '../Track';
 
 test('fetch valid folder', async () => {
-  const trackPath = resolve(__dirname, './tracks/sample-3s.mp3');
-  const expectedTrack: Track = {
-    id: Buffer.from(trackPath).toString('base64'),
-    filePath: trackPath,
+  const firstTrackPath = resolve(__dirname, './tracks/sample-3s.mp3');
+  const firstExpectedTrack: Track = {
+    id: Buffer.from(firstTrackPath).toString('base64'),
+    filePath: firstTrackPath,
     metadata: {
       artists: '',
       title: '',
@@ -15,11 +15,23 @@ test('fetch valid folder', async () => {
       picture: null,
     },
   };
+  const secondTrackPath = resolve(__dirname, './tracks/sample-6s.mp3');
+  const secondExpectedTrack: Track = {
+    id: Buffer.from(secondTrackPath).toString('base64'),
+    filePath: secondTrackPath,
+    metadata: {
+      artists: '',
+      title: '',
+      duration: 6.426122448979592,
+      picture: null,
+    },
+  };
   const songFetcher = new SongFetcher();
   const sampleTracksPath = resolve(__dirname, 'tracks/');
   const tracks = await songFetcher.fetchFolder(sampleTracksPath);
-  expect(tracks.length).toBe(1);
-  expect(tracks[0]).toEqual(expectedTrack);
+  expect(tracks.length).toBe(2);
+  expect(tracks[0]).toEqual(firstExpectedTrack);
+  expect(tracks[1]).toEqual(secondExpectedTrack);
 });
 
 test('fetch invalid folder path', async () => {

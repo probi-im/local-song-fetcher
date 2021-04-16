@@ -1,4 +1,5 @@
 import { access, lstat, readdir, readFile } from 'fs/promises';
+import {parseFile} from 'music-metadata';
 import { extname, join } from 'path';
 import Track from './Track';
 import TrackMetadata from './TrackMetadata';
@@ -26,11 +27,11 @@ class SongFetcher {
 
   private async parseAudioFileMetadata(filePath: string): Promise<TrackMetadata> {
     try {
-      filePath.toLowerCase();
+      const audioTags = await parseFile(filePath);
       return {
-        artists: '',
-        title: '',
-        duration: 3.239183673469388,
+        artists: audioTags.common.artistsort || '',
+        title: audioTags.common.title || '',
+        duration: audioTags.format.duration || 0,
         picture: null,
       };
     } catch (error) {
