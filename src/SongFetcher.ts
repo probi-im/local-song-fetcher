@@ -1,5 +1,5 @@
 import { access, lstat, readdir, readFile } from 'fs/promises';
-import {parseFile} from 'music-metadata';
+import { parseFile } from 'music-metadata';
 import { extname, join } from 'path';
 import Track from './Track';
 import TrackMetadata from './TrackMetadata';
