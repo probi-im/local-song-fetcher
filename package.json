@@ -1,0 +1,28 @@
+{
+  "name": "local-song-fetcher",
+  "version": "0.0.1",
+  "description": "Fetch local songs metadata",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/probi-im/local-song-fetcher.git"
+  },
+  "keywords": [
+    "song",
+    "metadata",
+    "fetch"
+  ],
+  "author": "Bastien J.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/probi-im/local-song-fetcher/issues"
+  },
+  "homepage": "https://github.com/probi-im/local-song-fetcher#readme",
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}
