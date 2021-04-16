@@ -4,10 +4,10 @@ import SongFetcher from '../SongFetcher';
 import Track from '../Track';
 
 test('fetch valid folder', async () => {
+  const trackPath = resolve(__dirname, './tracks/sample-3s.mp3');
   const expectedTrack: Track = {
-    id:
-      'QzpcVXNlcnNcQmFzdGllblxkZXZcTElCUkFSSUVTXGxvY2FsLXNvbmctZmV0Y2hlclxzcmNcX190ZXN0c19fXHRyYWNrc1xzYW1wbGUtM3MubXAz',
-    filePath: resolve(__dirname, './tracks/sample-3s.mp3'),
+    id: Buffer.from(trackPath).toString('base64'),
+    filePath: trackPath,
     metadata: {
       artists: '',
       title: '',
