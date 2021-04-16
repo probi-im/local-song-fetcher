@@ -1,6 +1,6 @@
 {
   "name": "local-song-fetcher",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Fetch local songs metadata",
   "main": "lib/index.js",
   "types": "lib/index.d.js",
